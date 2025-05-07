@@ -6,3 +6,27 @@ git clone --depth=1 https://github.com/JaKooLit/Arch-Hyprland.git ~/Arch-Hyprlan
 cd ~/Arch-Hyprland
 chmod +x install.sh
 ./install.sh
+
+ML4W
+
+bash <(curl -s https://raw.githubusercontent.com/mylinuxforwork/dotfiles/main/setup-arch.sh)
+
+Arch Linux (based)
+
+Recommended is to install the Hyprland Desktop Profile from archinstall first.
+
+bash <(curl -s https://raw.githubusercontent.com/mylinuxforwork/dotfiles/main/setup-arch.sh)
+
+YouTube Video https://youtu.be/sVFnd5LAYAc
+
+You can also install the main release with your preferred AUR helper.
+
+yay -S ml4w-hyprland
+ml4w-hyprland-setup
+
+You can install the rolling release with
+
+yay -S ml4w-hyprland-git
+ml4w-hyprland-setup
+
+Please rebuild all packages to ensure that you get the latest commit.
