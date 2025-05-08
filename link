@@ -9,6 +9,13 @@ cd ~/Arch-Hyprland
 chmod +x install.sh
 ./install.sh
 
+HyDE
+pacman -S --needed git base-devel
+git clone --depth 1 https://github.com/HyDE-Project/HyDE ~/HyDE
+cd ~/HyDE/Scripts
+./install.sh
+
+
 ML4W
 
 bash <(curl -s https://raw.githubusercontent.com/mylinuxforwork/dotfiles/main/setup-arch.sh)
