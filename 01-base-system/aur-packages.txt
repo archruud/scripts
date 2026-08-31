@@ -1,0 +1,46 @@
+# AUR Packages - Standalone installasjon
+# Programmer fra AUR som ikke trenger konfigurasjon
+# Ett program per linje, linjer som starter med # er kommentarer
+
+# === HYPRLAND ECOSYSTEM ===
+# hyprpicker -> installeres av 11-fuzzel-hyprpicker/install-fuzzel-hyprpicker.sh
+
+# === WAYLAND TOOLS ===
+# wl-screenrec          # Screen recorder
+# wf-recorder            # Alternative screen recorder
+
+# === APPEARANCE ===
+# nwg-look               # GTK theme switcher
+qt5ct                  # Qt5 theme config
+qt6ct                  # Qt6 theme config
+kvantum               # Qt theme engine
+
+# media converter
+tifig-bin  # HEIC til JPG  tifig input.heic output.jpg
+# tutanota-desktop-bin  # Mail software
+
+# === FILE MANAGERS ===
+
+# === DEVELOPMENT ===
+zed
+
+# === UTILITIES ===
+# rofi     -> installeres av 13-rofi/install-rofi-adi1090x.sh
+# fuzzel   -> installeres av 11-fuzzel-hyprpicker/install-fuzzel-hyprpicker.sh
+# webapp-manager -> fjernet, erstattet av ice-ssb (se eget quickshell-script)
+
+# === SYSTEM ===
+auto-cpufreq            # Automatic CPU frequency scaling
+
+# === OPTIONAL ===
+# spotify               # Music streaming
+# discord                 #
+libreoffice-fresh-nb    # Office Norsk
+kate                    # kate textbehandler fra KDE Plasma
+
+# === NETWORK ===
+nmgui-bin               # Wifi gui - gui bassert nmcli terminal
+
+# === FONTS AND ICONS ===
+# nerd-fonts-git    #Iconic font aggregator, collection, and patcher: 34 fonts (77k variations)
+ttf-ms-fonts

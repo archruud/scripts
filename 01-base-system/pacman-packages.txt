@@ -1,0 +1,82 @@
+# Pacman Packages - Standalone installasjon
+# Programmer som ikke trenger konfigurasjon
+# Ett program per linje, linjer som starter med # er kommentarer
+# NB: polkit installeres av archinstall - ikke nødvendig her
+
+# === SYSTEM UTILITIES ===
+brightnessctl          # Lysstyrke kontroll (fungerer med keyboard)
+power-profiles-daemon  # Power management (fungerer automatisk)
+pavucontrol            # Audio kontroll GUI
+playerctl              # Media player kontroll
+polkit-gnome           # Polkit authentication agent for GNOME/Hyprland
+gnome-keyring          # Keyring for passord
+xdg-desktop-portal-hyprland  # Desktop portal for Hyprland
+xdg-user-dirs          # User directories
+udisks2                # Disk management
+
+# === TERMINAL & TOOLS ===
+kitty                  # Terminal emulator
+wget                   # Download tool
+curl                   # Transfer tool
+git                    # Version control
+bat                    # Cat replacement
+eza                    # Ls replacement
+jq                     # JSON processor
+
+# === FONTS ===
+ttf-jetbrains-mono-nerd    # JetBrains Mono Nerd Font
+ttf-fira-code              # Fira Code
+ttf-font-awesome           # Font Awesome icons
+noto-fonts                 # Noto fonts
+noto-fonts-emoji           # Emoji support
+noto-fonts-cjk             # Asian language support
+
+# === FILE MANAGERS ===
+dolphin                # KDE file manager
+dolphin-plugins        # Dolphin plugins
+kdegraphics-thumbnailers  # Image thumbnails
+ffmpegthumbs          # Video thumbnails
+gvfs                   # Virtual filesystem
+gvfs-mtp               # MTP support (phones)
+
+# === MEDIA ===
+mpv                    # Video player
+gwenview               # KDE image viewer
+okular                 # KDE PDF/dokumentviser
+
+# === NETWORK ===
+networkmanager         # Network management
+network-manager-applet # Network applet
+bluez                  # Bluetooth
+bluez-utils            # Bluetooth utilities
+blueman                # Bluetooth manager GUI
+
+# === AUDIO ===
+pipewire               # Audio server
+pipewire-pulse         # Pulseaudio compatibility
+pipewire-alsa          # ALSA compatibility
+pipewire-jack          # JACK compatibility
+wireplumber            # Session manager
+alsa-utils             # ALSA utilities
+pamixer                # Audio mixer CLI
+
+# === BROWSER ===
+firefox
+
+# === DEVELOPMENT (optional) ===
+python
+python-pip
+
+# === UTILITIES ===
+wl-clipboard           # Wayland clipboard
+cliphist               # Clipboard manager
+grim                   # Screenshot tool
+slurp                  # Region selector
+swappy                 # Screenshot editor
+
+# === PAKKING ===
+unzip                  # Pakker ut ZIP-filer
+unrar                  # Pakker ut RAR-filer
+p7zip                  # Pakker ut 7z og mange andre formater
+zip                    # Lager ZIP-filer
+ark                    # KDE arkivbehandler med GUI
