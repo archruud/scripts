@@ -1,9 +1,0 @@
-{
-  "overview": {
-    "rows": 2,
-    "columns": 5,
-    "scale": 0.16,
-    "showSpecialWorkspaces": true,
-    "emptyWorkspaceWallpaper": "$HOME/.config/hypr/wallpapers/ARCHRUUD_1920x1200.png"
-  }
-}
