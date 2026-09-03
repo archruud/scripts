@@ -21,7 +21,7 @@ echo ""
 echo -e "${GREEN}Installerer pakker...${NC}"
 sudo pacman -S --needed --noconfirm \
     qemu-desktop libvirt virt-manager virt-viewer \
-    dnsmasq iptables-nft edk2-ovmf bridge-utils dmidecode
+    dnsmasq iptables-nft edk2-ovmf dmidecode
 
 echo -e "${GREEN}Aktiverer libvirt...${NC}"
 sudo systemctl enable --now libvirtd.socket
