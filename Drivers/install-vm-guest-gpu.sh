@@ -28,6 +28,7 @@ echo -e "${CYAN}Installerer Vulkan/OpenGL-laget (virtio-gpu-driveren er allerede
 sudo pacman -S --needed --noconfirm \
     mesa \
     vulkan-icd-loader \
+    vulkan-virtio \
     vulkan-mesa-implicit-layers \
     qemu-guest-agent
 
@@ -40,14 +41,21 @@ echo -e "${GREEN}✓ qemu-guest-agent kjører${NC}"
 echo ""
 echo -e "${CYAN}=== Verifisering ===${NC}"
 if command -v vulkaninfo &>/dev/null; then
-    DEVICE=$(vulkaninfo 2>/dev/null | grep -m1 "deviceName" || echo "ikke funnet")
-    echo "deviceName: $DEVICE"
-    if echo "$DEVICE" | grep -qi "llvmpipe"; then
-        echo -e "${RED}✗ Kjører på llvmpipe = ren software-rendering, INGEN GPU-akselerasjon.${NC}"
-        echo -e "${YELLOW}  Sjekk vertsiden: Video=Virtio+3D acceleration og Display=Spice+OpenGL må være på,${NC}"
-        echo -e "${YELLOW}  se vm-gpu-setup.md. Vanligste årsak: OpenGL-boksen i Display Spice er ikke krysset av.${NC}"
+    DEVICE=$(vulkaninfo 2>&1 | grep -m1 "deviceName" || true)
+    if [ -z "$DEVICE" ]; then
+        echo -e "${RED}✗ Fant ingen deviceName i det hele tatt - vulkaninfo feilet fullstendig.${NC}"
+        echo -e "${YELLOW}  Vanligste årsak: 'vulkan-virtio'-pakken manglet (gir selve ICD-fila for${NC}"
+        echo -e "${YELLOW}  virtio-gpu). Nå installert av dette scriptet - kjør 'vulkaninfo | grep deviceName' på nytt.${NC}"
+        echo -e "${YELLOW}  Hvis den fortsatt feiler: sjekk vertsiden (Video=Virtio+3D accel, Display=Spice+OpenGL).${NC}"
     else
-        echo -e "${GREEN}✓ Venus/GPU-akselerasjon ser ut til å virke${NC}"
+        echo "deviceName: $DEVICE"
+        if echo "$DEVICE" | grep -qi "llvmpipe"; then
+            echo -e "${RED}✗ Kjører på llvmpipe = ren software-rendering, INGEN GPU-akselerasjon.${NC}"
+            echo -e "${YELLOW}  Sjekk vertsiden: Video=Virtio+3D acceleration og Display=Spice+OpenGL må være på,${NC}"
+            echo -e "${YELLOW}  se vm-gpu-setup.md. Vanligste årsak: OpenGL-boksen i Display Spice er ikke krysset av.${NC}"
+        else
+            echo -e "${GREEN}✓ Venus/GPU-akselerasjon virker${NC}"
+        fi
     fi
 else
     echo -e "${YELLOW}vulkan-tools er ikke installert - installer den for å teste: sudo pacman -S vulkan-tools${NC}"
